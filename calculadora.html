@@ -208,7 +208,7 @@
 											<div class="col-sm-10">
 												<div class="btn-group buttongroupresponsive" role="group">
 													<input type="radio" class="btn-check required" name="clase-contrato" id="monoambiente" value="monoambiente">
-													<label for="monoambiente" class="btn btn-outline-dark font-body ls0 nott">Monoambiente</label>
+													<label for="monoambiente" class="btn btn-outline-dark font-body ls0 nott">Estudio profesional</label>
 
 													<input type="radio" class="btn-check required" name="clase-contrato" id="fitness-form-mass-gain" value="dosAmbientes">
 													<label for="fitness-form-mass-gain" class="btn btn-outline-dark font-body ls0 nott">2 Ambientes</label>
@@ -216,8 +216,6 @@
                          							<input type="radio" class="btn-check required" name="clase-contrato" id="fitness-form-athletic-body" value="tresAmbientes">
 													<label for="fitness-form-athletic-body" class="btn btn-outline-dark font-body ls0 nott">3 Ambientes</label>
 											
-													<input type="radio" class="btn-check required" name="clase-contrato" id="fitness-form-athletic-other" value="cochera">
-													<label for="fitness-form-athletic-other" class="btn btn-outline-dark font-body ls0 nott">Cochera</label>
 												</div>
 
 											</div>
@@ -430,17 +428,12 @@
 								<i class="icon-facebook"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-twitter">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
-							</a>
-
 							<a href="#" class="social-icon si-small si-borderless si-linkedin">
 								<i class="icon-linkedin"></i>
 								<i class="icon-linkedin"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-youtube">
+							<a href="https://www.youtube.com/channel/UCwoY-AvmhSOy1615cxanyTA" class="social-icon si-small si-borderless si-youtube">
 								<i class="icon-youtube"></i>
 								<i class="icon-youtube"></i>
 							</a>
@@ -593,38 +586,53 @@
 
 <script>
   let cantidadCuotas= 0; //A: lo maneja el on change de jquery por eso lo dejamos global
+  let clasesContratosMap={
+    "monoambiente": "1AMB-STD-QI",
+    "dosAmbientes": "2AM-STD-QI",
+    "tresAmbientes": "3AMB-STD-QI",
+  }
+  let clasesContratos;  
   
   async function main(){
     
-    let clasesContratos = await getClasesContratos();  
-    let claseContrato= "monoambiente"; //A: default;
+    clasesContratos = await getClasesContratos();  
+    let claseContrato= clasesContratosMap["monoambiente"]; //A: default;
 
     //---------------On Change Handlers
 
     let elements= document.getElementsByName("clase-contrato")
     for (var i = 0; i < elements.length; i++) {
-      elements[i].addEventListener('click', (e) => claseContrato= e.target.value, false);
+      elements[i].addEventListener('click', (e) =>{
+        claseContratoNombre= e.target.value;
+        claseContrato= clasesContratosMap[claseContratoNombre]; //A: el codigo de contrato que viene del BE;
+      }, false);
     }
     //A: cuando el usuario cambio el tipo de clase contrato
 
-    document.getElementById("calcular-cuotas").addEventListener( "click", calcularValorCuota);
+    function calcularYMostrarValorCuota(){
+      let valorCuota= calcularValorCuota(claseContrato, cantidadCuotas);
+      document.getElementById("valor-cuotas").innerHTML= valorCuota;
+    }
+
+    document.getElementById("calcular-cuotas").addEventListener( "click", calcularYMostrarValorCuota, false);
 
     //---------END On Change Handlers
 
     async function getClasesContratos(){
-      let res= await fetch("api/clasesContrato") ;
+      let res= await fetch("api/calculadora-cuotas") ;
       let data = await res.json();
       return data;
     }
 
     function calcularValorCuota(){
-      //DBG: console.log("claseContrato: " + claseContrato + " cantidadCuotas: " + cantidadCuotas);
-      let claseContratoSeleccionada= clasesContratos.find( (clase) => clase.tipo === claseContrato);
-      if(cantidadCuotas <= 0) return document.getElementById("valor-cuotas").innerHTML= claseContratoSeleccionada.precioEnPesos.toLocaleString();
-      let valorCuota= parseInt(claseContratoSeleccionada.precioEnPesos / cantidadCuotas).toLocaleString();
-      document.getElementById("valor-cuotas").innerHTML= valorCuota;
+      console.log("cantidadCuotas", cantidadCuotas);  
+      let claseContratoSeleccionada= clasesContratos.find( (clase) => clase.codigo === claseContrato);
+      if(cantidadCuotas <= 0) return claseContratoSeleccionada.precioEnPesos.toLocaleString();
+      let valorCuota= parseInt((claseContratoSeleccionada.precioEnPesos / cantidadCuotas) * (5/6)).toLocaleString();
+      return valorCuota;
     }
 
+    calcularYMostrarValorCuota(); //A: para que se muestre el valor por defecto apenas carga la pagina
   }
 
   main();
@@ -666,6 +674,7 @@
           postfix: " cuotas",
           onStart: function(data){
               totalActivity = data.from;
+              cantidadCuotas= data.from;
           }
       });
 

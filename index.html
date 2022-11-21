@@ -34,6 +34,9 @@
 
 	<!-- Estilos para templates -->
 	<link rel="stylesheet" href="css/components/ion.rangeslider.css" type="text/css" />	
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
 
 	<!-- Título del documento -->
 	<title>Edilia</title>
@@ -67,6 +70,9 @@
 			.calculator {
 				padding: 1em;
 			}
+			.logo-device {
+			width: 90%;
+			}
     	}
 
 		@media only screen and (min-width: 415px) {
@@ -78,6 +84,9 @@
 			}
 			.calculator {
 				padding: 3em;
+			}
+			.logo-device {
+			width: 20%;
 			}
     	}
 
@@ -105,6 +114,112 @@
 		.tp-video-play-button { display: none !important; }
 
 		.tp-caption { white-space: nowrap; }
+
+		.demos-filter {
+			margin: 0;
+			text-align: right;
+		}
+
+		.demos-filter li {
+			list-style: none;
+			margin: 10px 0px;
+		}
+
+		.demos-filter li a {
+			display: block;
+			border: 0;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: #444;
+		}
+
+		.demos-filter li a:hover,
+		.demos-filter li.activeFilter a { color: #1ABC9C; }
+
+		@media (max-width: 991px) {
+			.demos-filter { text-align: center; }
+
+			.demos-filter li {
+				float: left;
+				width: 33.3%;
+				padding: 0 20px;
+			}
+		}
+
+		@media (max-width: 767px) { .demos-filter li { width: 50%; } }
+
+		#rev_slider_31_1 .uranus.tparrows {
+			width:50px;
+			height:50px;
+			background:rgba(255,255,255,0);
+		}
+		#rev_slider_31_1 .uranus.tparrows:before {
+			width:50px;
+			height:50px;
+			line-height:50px;
+			font-size:20px;
+			transition:all 0.3s;
+			-webkit-transition:all 0.3s;
+			color: rgba(255, 255, 255, 0);
+		}
+		#rev_slider_31_1 .uranus.tparrows:hover:before { opacity:0.75; }
+		.hermes .tp-bullet {
+			overflow:hidden;
+			border-radius:50%;
+			width:8px;
+			height:8px;
+			background-color:rgba(0,0,0,0);
+			box-shadow:inset 0 0 0 2px rgb(255,255,255);
+			-webkit-transition:background 0.3s ease;
+			transition:background 0.3s ease;
+			position:absolute;
+		}
+		.hermes .tp-bullet:hover { background-color:rgba(0,0,0,0.21); }
+		.hermes .tp-bullet:after {
+			content:' ';
+			position:absolute;
+			bottom:0;
+			height:0;
+			left:0;
+			width:100%;
+			background-color:#65d673;
+			box-shadow:0 0 1px rgb(255,255,255);
+			-webkit-transition:height 0.3s ease;
+			transition:height 0.3s ease;
+		}
+		.hermes .tp-bullet.selected:after{height:100%}
+
+		#hero {
+		width: 100%;
+		height: 100vh;
+		background: url("../img/hero-bg.png");
+		position: relative;
+		}
+		#hero .hero-container {
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
+		padding: 0 15px;
+		}
+		#hero .hero-logo {
+		margin-bottom: 30px;
+		}
+		.content-bg {
+		position: initial;
+		bottom: 0;
+		color: #f1f1f1;
+		width: 100%;
+		padding: 60px;
+		left: 0;
+		}
+		
 
 	</style>
 
@@ -161,51 +276,73 @@
 			<div class="header-wrap-clone"></div>
 		</header><!-- #Menu end -->
 
-		<section id="slider" class="slider-element slider-parallax swiper_wrapper min-vh-100 include-header" data-loop="true" data-speed="1000" data-effect="fade">
-			<div class="slider-inner">
+		<section id="slider" class="slider-element revslider-wrap h-auto include-header">
 
-				<div class="swiper-container swiper-parent">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide dark">
-							<div class="container">
-								<div class="slider-caption slider-caption-center">
-									<h2 class="mobilebg" style="text-transform: none" data-animate="fadeInUp">Ahorro flexible en metros²</h2>
+			<div class="rev_slider_wrapper" style="background:#aaa;padding:0px;">
+				<!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+				<div id="rev_slider_31_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+					<ul>
+						<li class="dark" data-index="rs-101" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="1000"  data-thumb="images/bg/bg1.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="" data-slicey_shadow="0px 0px 50px 0px transparent">
+							<!-- MAIN IMAGE -->
+							<img src="images/bg/bg1.jpg"  alt="Image"  data-bgposition="center center" data-kenburns="on" data-duration="7000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="150" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+							
+							<section id="hero">
+								<div class="hero-container">
+								  	<div class="content-bg">
+										<img class="logo-device" src="images/logoblanco.png" width="20%" style="padding: 1%;margin-bottom: 20px;" alt="">
+										<h2 class="mobilebg" style="text-transform: none; letter-spacing: 2px;" data-animate="fadeInUp">Ahorro flexible en metros²</h2>
+									</div>
 								</div>
-							</div>
-							<div class="swiper-slide-bg" style="background-image: url('images/bg/bg1.jpg');"></div>
-						</div>
-						<div class="swiper-slide dark">
-							<div class="container">
-								<div class="slider-caption slider-caption-center">
-									<h2  style="text-transform: none" data-animate="fadeInUp">Edilia es ahorro inteligente,<br>es inversión segura</h2>
+							</section>
+
+						</li>
+						<li class="dark" data-index="rs-102" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="1000"  data-thumb="images/bg/bg1.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="" data-slicey_shadow="0px 0px 50px 0px transparent">
+							<!-- MAIN IMAGE -->
+							<img src="images/bg/bg3.jpg"  alt="Image"  data-bgposition="center center" data-kenburns="on" data-duration="7000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="150" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+							
+							<section id="hero">
+								<div class="hero-container">
+								  	<div class="content-bg">
+										<img class="logo-device" src="images/logoblanco.png" width="20%" style="padding: 1%;margin-bottom: 20px;" alt="">
+										<h2 class="mobilebg" style="text-transform: none; letter-spacing: 2px;" data-animate="fadeInUp">Una idea para todos.<br>Una casa para vos.</h2>
+									</div>
 								</div>
-							</div>
-							<div class="swiper-slide-bg" style="background-image: url('images/bg/bg2.jpg');"></div>
-						</div>
-						<div class="swiper-slide dark">
-							<div class="container">
-								<div class="slider-caption slider-caption-center">
-									<h2  style="text-transform: none" data-animate="fadeInUp">Una idea para todos,<br>una casa para vos</h2>
+							</section>
+
+						</li>
+						<li class="dark" data-index="rs-103" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="1000"  data-thumb="images/bg/bg1.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="" data-slicey_shadow="0px 0px 50px 0px transparent">
+							<!-- MAIN IMAGE -->
+							<img src="images/bg/bg2.jpg"  alt="Image"  data-bgposition="center center" data-kenburns="on" data-duration="7000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="150" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+							
+							<section id="hero">
+								<div class="hero-container">
+								  	<div class="content-bg">
+										<img class="logo-device" src="images/logoblanco.png" width="20%" style="padding: 1%;margin-bottom: 20px;" alt="">
+										<h2 class="mobilebg" style="text-transform: none; letter-spacing: 2px;" data-animate="fadeInUp">Edilia es ahorro inteligente.<br>Es inversión segura.</h2>
+									</div>
 								</div>
-							</div>
-							<div class="swiper-slide-bg" style="background-image: url('images/bg/bg3.jpg');"></div>
-						</div>
-						<div class="swiper-slide dark">
-							<div class="container">
-								<div class="slider-caption slider-caption-center">
-									<h2  style="text-transform: none" data-animate="fadeInUp">El placer de estar <br> en casa, la emoción de que sea tuya</h2>
+							</section>
+
+						</li>
+						<li class="dark" data-index="rs-104" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="1000"  data-thumb="images/bg/bg1.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="" data-slicey_shadow="0px 0px 50px 0px transparent">
+							<!-- MAIN IMAGE -->
+							<img src="images/bg/bg5.jpg"  alt="Image"  data-bgposition="center center" data-kenburns="on" data-duration="7000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="150" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+							
+							<section id="hero">
+								<div class="hero-container">
+								  	<div class="content-bg">
+										<img class="logo-device" src="images/logoblanco.png" width="20%" style="padding: 1%;margin-bottom: 20px;" alt="">
+										<h2 class="mobilebg" style="text-transform: none; letter-spacing: 2px;" data-animate="fadeInUp">El placer de estar en casa.<br>La emoción de que sea tuya.</h2>
+									</div>
 								</div>
-							</div>
-							<div class="swiper-slide-bg" style="background-image: url('images/bg/bg5.jpg');"></div>
-						</div>
-					</div>
-					<div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
-					<div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
+							</section>
+
+						</li>
+					</ul>
+					<div class="tp-bannertimer" style="height: 5px; background: rgba(255, 255, 255, 0.203);"></div>
 				</div>
+			</div><!-- END REVOLUTION SLIDER -->
 
-				<a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" class="one-page-arrow dark"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
-
-			</div>
 		</section>
 
 		<!-- Contenido de la página -->
@@ -229,7 +366,7 @@
 										<div class="col-sm-12">
 											<div class="btn-group buttongroupresponsive" role="group">
 												<input type="radio" class="btn-check required" checked name="clase-contrato" id="fitness-form-weight-loss" value="monoambiente">
-												<label for="fitness-form-weight-loss" class="btn btn-outline-light font-body ls0 nott ">Monoambiente</label>
+												<label for="fitness-form-weight-loss" class="btn btn-outline-light font-body ls0 nott ">Estudio profesional</label>
 
 												<input type="radio" class="btn-check required" name="clase-contrato" id="fitness-form-mass-gain" value="dosAmbientes">
 												<label for="fitness-form-mass-gain" class="btn btn-outline-light font-body ls0 nott">2 Ambientes</label>
@@ -237,9 +374,7 @@
 												<input type="radio" class="btn-check required" name="clase-contrato" id="fitness-form-athletic-body" value="tresAmbientes">
 												<label for="fitness-form-athletic-body" class="btn btn-outline-light font-body ls0 nott">3 Ambientes</label>
 										
-												<input type="radio" class="btn-check required" name="clase-contrato" id="fitness-form-athletic-other" value="cochera">
-												<label for="fitness-form-athletic-other" class="btn btn-outline-light font-body ls0 nott">Cochera</label>
-											</div>
+												</div>
 
 										</div>
 									</div>
@@ -254,7 +389,7 @@
 						<div data-animate="fadeInRight" class="col-lg-4 col-md-5 mt-4 mt-md-0 sticky-sidebar-wrap shadow" style="background-color: #ffffff; border-radius: 1em;">
 							<div class=" text-center border-0  sticky-sidebar py-4">
 								<div class="card-body py-4">
-									<h3 class="card-title fw-normal mb-0">Valor de cuota</h3>
+									<h3 class="card-title fw-normal mb-0">Valor de cuota</h3>	
 									<!-- Valor cuota -->
 									<div class="pricing-price fw-bold py-3" style="color: #65d673"></div>
 									<p class="card-text pricing-sub text-muted">*Pesos ARG</p>
@@ -326,13 +461,18 @@
 
 				</div>
 
-				<!-- Partners -->
-				<div data-animate="fadeInUp" style="background-color: #fafafa;" id="oc-clients-full" class="owl-carousel image-carousel carousel-widget p-4" data-margin="50" data-nav="false" data-loop="true" data-autoplay="5000" data-pagi="false" data-items-xs="2" data-items-sm="2" data-items-md="4" data-items-lg="6" data-items-xl="6">
+				<div style="background-color: #fafafa;"class="center page-section" >
+					<div class="container"  data-animate="fadeInUp">
+						<h2 class="mx-auto  font-body" style="max-width: 700px; font-size: 40px;">Aliados estratégicos</h2>
+					</div>
+					<!-- Partners -->
+					<div data-animate="fadeInUp" style="background-color: #fafafa;" id="oc-clients-full" class="owl-carousel image-carousel carousel-widget p-4" data-margin="50" data-nav="false" data-loop="true" data-autoplay="5000" data-pagi="false" data-items-xs="2" data-items-sm="2" data-items-md="4" data-items-lg="6" data-items-xl="6">
 
-					<a href="#"><img src="images/partners1.png" alt="Clients"></a>
-					<a href="#"><img src="images/partners2.png" alt="Clients"></a
-					<a href="#"><img src="images/partners3.png" alt="Clients"></a>
+						<a href="#"><img src="images/partners1.png" alt="Clients"></a>
+						<a href="#"><img src="images/partners2.png" alt="Clients"></a
+						<a href="#"><img src="images/partners3.png" alt="Clients"></a>
 
+					</div>
 				</div>
 
 				<!-- Distrito Qiudad -->
@@ -346,7 +486,7 @@
 										<h2  style="color: white;font-weight: 600; letter-spacing: 2px;">Distrito Qiudad</h2>
 										<p class="lead topmargin-sm"  style="color: white;">Invertí en un proyecto constructivo sin igual. Un complejo mixto de oficinas, comercios y departamentos, que excede tus expectativas para ofrecerte todo lo mejor en un mismo lugar.	</p>
 										<a href="proyectos.html	" class="button button-border button-light button-rounded text-uppercase m-0">Ver más</a>
-							
+							animate
 									</div>
 								</div>
 							</div>
@@ -359,113 +499,113 @@
 		</section><!-- #Contenido end -->
 
 		
-			<!-- Footer -->
-			<footer id="footer" class="light border-0">
+		<!-- Footer -->
+		<footer id="footer" class="light border-0">
 
-				<div data-animate="fadeInUp" id="section-contact" class="page-section pt-0">
-					<div class="container clearfix">
-	
-						<div class="mx-auto " style="max-width: 850px;">
-	
-							<div class="form-widget">
-	
-								<div class="form-result"></div>
-	
-								<form class="row mb-0" style="padding-top: 6em" id="template-contactform" name="template-contactform"
-									action="api/contacto" method="post">
-								
-									<h3 class="text mb-2" style=" letter-spacing: 2px;">CONTACTANOS</h3>
-								
-									<div class="form-process">
-										<div class="css3-spinner">
-											<div class="css3-spinner-scale-ripple">
-												<div></div>
-												<div></div>
-												<div></div>
-											</div>
+			<div data-animate="fadeInUp" id="section-contact" class="page-section pt-0">
+				<div class="container clearfix">
+
+					<div class="mx-auto " style="max-width: 850px;">
+
+						<div class="form-widget">
+
+							<div class="form-result"></div>
+
+							<form class="row mb-0" style="padding-top: 6em" id="template-contactform" name="template-contactform"
+								action="api/contacto" method="post">
+							
+								<h3 class="text mb-2" style=" letter-spacing: 2px;">CONTACTANOS</h3>
+							
+								<div class="form-process">
+									<div class="css3-spinner">
+										<div class="css3-spinner-scale-ripple">
+											<div></div>
+											<div></div>
+											<div></div>
 										</div>
 									</div>
-								
-									<div class="col-md-6 mb-4">
-										<input type="text" id="template-contactform-name" value="" class="sm-form-control border-form-control required"
-											placeholder="Nombre" name="nombre" required />
-									</div>
-									<div class="col-md-6 mb-4">
-										<input type="email" id="template-contactform-email" value=""
-											class="required email sm-form-control border-form-control" placeholder="Email" name="email" required />
-									</div>
-								
-									<div class="w-100"></div>
-								
-									<div class="col-md-4 mb-4">
-										<input type="text" id="template-contactform-phone" value="" class="sm-form-control border-form-control"
-											placeholder="Teléfono" name="telefono" required />
-									</div>
-								
-									<div class="col-md-8 mb-4">
-										<input type="text" id="template-contactform-subject" value=""
-											class="required sm-form-control border-form-control" placeholder="Asunto" name="asunto" required />
-									</div>
-								
-									<div class="w-100"></div>
-								
-									<div class="col-12 mb-4">
-										<textarea class="required sm-form-control border-form-control" id="template-contactform-message" rows="7"
-											cols="30" placeholder="Tu mensaje" name="mensaje" required></textarea>
-									</div>
-								
-									<div class="col-12 center mb-4">
-										<button class="button button-border fw-medium ms-0 topmargin-sm" type="submit" id="template-contactform-submit"
-											value="submit">ENVIAR</button>
-										<br>
-									</div>
-								
-									<div class="w-100"></div>
-								
-									<!-- <div class="col-12 d-none">
-																		<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-																	</div> -->
-								
-									<input type="hidden" name="fromPage" value="calculadora">
-								
-								</form>
-	
-							</div>
-	
-						</div>
-	
-					</div>
-	
-				</div>
-				
-				<div class="center" style="background-color: #65d673;">
-					<div class="footer-widgets-wrap">
-	
-						<div class="row mx-auto mt-5">
-	
-	
-							<div data-animate="fadeInLeft" class="col-lg-6">
-	
-								<div class="widget ">
-									<h4 style="color: white;text-transform: none;"><i class="icon-line-mail"></i><br> consultas@edilia.com.ar</h4>
 								</div>
-	
-							</div>
-	
-							<div data-animate="fadeInRight" class="col-lg-6">
-	
-								<div class="widget ">
-									<h4 style="color: white"><i class="icon-line-phone"></i><br> (+ 54 11) 2507 7000/7001</h4>
+							
+								<div class="col-md-6 mb-4">
+									<input type="text" id="template-contactform-name" value="" class="sm-form-control border-form-control required"
+										placeholder="Nombre" name="nombre" required />
 								</div>
-	
-							</div>
-	
+								<div class="col-md-6 mb-4">
+									<input type="email" id="template-contactform-email" value=""
+										class="required email sm-form-control border-form-control" placeholder="Email" name="email" required />
+								</div>
+							
+								<div class="w-100"></div>
+							
+								<div class="col-md-4 mb-4">
+									<input type="text" id="template-contactform-phone" value="" class="sm-form-control border-form-control"
+										placeholder="Teléfono" name="telefono" required />
+								</div>
+							
+								<div class="col-md-8 mb-4">
+									<input type="text" id="template-contactform-subject" value=""
+										class="required sm-form-control border-form-control" placeholder="Asunto" name="asunto" required />
+								</div>
+							
+								<div class="w-100"></div>
+							
+								<div class="col-12 mb-4">
+									<textarea class="required sm-form-control border-form-control" id="template-contactform-message" rows="7"
+										cols="30" placeholder="Tu mensaje" name="mensaje" required></textarea>
+								</div>
+							
+								<div class="col-12 center mb-4">
+									<button class="button button-border fw-medium ms-0 topmargin-sm" type="submit" id="template-contactform-submit"
+										value="submit">ENVIAR</button>
+									<br>
+								</div>
+							
+								<div class="w-100"></div>
+							
+								<!-- <div class="col-12 d-none">
+																	<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+																</div> -->
+							
+								<input type="hidden" name="fromPage" value="calculadora">
+							
+							</form>
+
 						</div>
-	
+
 					</div>
+
 				</div>
-	
-			</footer><!-- #Footer end -->
+
+			</div>
+			
+			<div class="center" style="background-color: #65d673;">
+				<div class="footer-widgets-wrap">
+
+					<div class="row mx-auto mt-5">
+
+
+						<div data-animate="fadeInLeft" class="col-lg-6">
+
+							<div class="widget ">
+								<h4 style="color: white;text-transform: none;"><i class="icon-line-mail"></i><br> consultas@edilia.com.ar</h4>
+							</div>
+
+						</div>
+
+						<div data-animate="fadeInRight" class="col-lg-6">
+
+							<div class="widget ">
+								<h4 style="color: white"><i class="icon-line-phone"></i><br> (+ 54 11) 2507 7000/7001</h4>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</footer><!-- #Footer end -->
 
 		<!-- Derechos y redes -->
 		<div id="copyrights" style="background-color: white">
@@ -484,17 +624,12 @@
 								<i class="icon-facebook"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-twitter">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
-							</a>
-
 							<a href="#" class="social-icon si-small si-borderless si-linkedin">
 								<i class="icon-linkedin"></i>
 								<i class="icon-linkedin"></i>
 							</a>
 
-							<a href="#" class="social-icon si-small si-borderless si-youtube">
+							<a href="https://www.youtube.com/channel/UCwoY-AvmhSOy1615cxanyTA" class="social-icon si-small si-borderless si-youtube">
 								<i class="icon-youtube"></i>
 								<i class="icon-youtube"></i>
 							</a>
@@ -558,10 +693,16 @@
 
 		$(document).ready( function() {
 
+      let clasesContratosMap={
+        "monoambiente": "1AMB-STD-QI",
+        "dosAmbientes": "2AM-STD-QI",
+        "tresAmbientes": "3AMB-STD-QI",
+      }
+
       let clasesContratos;
-      let claseContrato= "monoambiente"; //A: default;
+      let claseContrato= clasesContratosMap["monoambiente"]; //A: default;
       let cantidadCuotas= 0;
-      fetch("api/clasesContrato")
+      fetch("api/calculadora-cuotas")
         .then(res=> res.json())
         .then( clasesCon => clasesContratos= clasesCon)
       
@@ -571,7 +712,8 @@
       let elements= document.getElementsByName("clase-contrato")
       for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click', (e) =>{ 
-          claseContrato= e.target.value
+          claseContratoNombre= e.target.value;
+          claseContrato= clasesContratosMap[claseContratoNombre]; //A: el codigo que viene del BE;
           jQuery('.pricing-price').html( '$'+calcularValorCuota() );
         });
       }
@@ -579,10 +721,9 @@
 
       //---------END On Change Handlers
       function calcularValorCuota(){
-        console.log("claseContrato: " + claseContrato + " cantidadCuotas: " + cantidadCuotas);
-        let claseContratoSeleccionada= clasesContratos.find( (clase) => clase.tipo === claseContrato);
+        let claseContratoSeleccionada= clasesContratos.find( (clase) => clase.codigo === claseContrato);
         if(cantidadCuotas <= 0) return claseContratoSeleccionada.precioEnPesos.toLocaleString();
-        let valorCuota= parseInt(claseContratoSeleccionada.precioEnPesos / cantidadCuotas).toLocaleString();
+        let valorCuota= parseInt((claseContratoSeleccionada.precioEnPesos / cantidadCuotas) * (5/6)).toLocaleString();
         return valorCuota;
       }
 
@@ -619,89 +760,154 @@
 				postfix: ' Cuotas',
 				onStart: function(data){
 					days = data.from;
-					console.log(data);
+          cantidadCuotas= data.from;
 				}
 			});
+      //A: slider de cantidad de cuotas
 
 			elementDays.on( 'onStart change', function(){
 				days = $(this).prop('value');
         cantidadCuotas= days;
 				calculatePrice( pricingBikes, days );
 			});
-
-			calculatePrice( pricingBikes, days );
-
-			function calculatePrice( bikes, days ) {
+      
+      function calculatePrice( bikes, days ) {
         if(!clasesContratos) return console.log("No cargaron las clases de contrato");
+        
+        console.log("calculatePrice: " + bikes + " " + days);
+        console.log(clasesContratos)
+        var pricingValue = calcularValorCuota();
+        console.log("pricingValue: " + pricingValue);
+        jQuery('.pricing-price').html( '$'+pricingValue );
+      }
 
-				var pricingValue = calcularValorCuota();
-				jQuery('.pricing-price').html( '$'+pricingValue );
-			}
+      async function main(){
+        let res= await fetch("api/calculadora-cuotas");
+        let clasesContratosApi= await res.json();
+        clasesContratos= clasesContratosApi;
+        console.log(clasesContratos)
+        calculatePrice( pricingBikes, days );
+      }
 
+      main();
 		});
 	</script>
 
 	<!-- JavaScript Slider Partners -->
 	<script src="js/components/rangeslider.min.js"></script>
 
-	<script src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-	<script src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-
-	<script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
-	<script src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
-	<script src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
-	<script src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
-
-	<script>
-		var tpj=jQuery;
-		var revapi42;
-		var $ = jQuery.noConflict();
-
-		tpj(document).ready(function() {
-			if(tpj("#rev_slider_42_1").revolution == undefined){
-				revslider_showDoubleJqueryError("#rev_slider_42_1");
-			}else{
-				revapi42 = tpj("#rev_slider_42_1").show().revolution({
-					sliderType:"hero",
-					jsFileLocation:"include/rs-plugin/js/",
-					sliderLayout:"fullwidth",
-					dottedOverlay:"none",
-					delay:9000,
-					navigation: {
-					},
-					viewPort: {
-						enable:true,
-						outof:"pause",
-						visible_area:"80%"
-					},
-					responsiveLevels:[1240,1024,778,480],
-					gridwidth:[1240,1024,778,480],
-					gridheight:[500,450,400,350],
-					lazyType:"none",
-					parallax: {
-						type:"scroll",
-						origo:"enterpoint",
-						speed:400,
-						levels:[5,10,15,20,25,30,35,40,45,50],
-					},
-					shadow:0,
-					spinner:"off",
-					autoHeight:"off",
-					disableProgressBar:"on",
-					hideThumbsOnMobile:"off",
-					hideSliderAtLimit:0,
-					hideCaptionAtLimit:0,
-					hideAllCaptionAtLilmit:0,
-					debugMode:false,
-					fallbacks: {
-						simplifyAll:"off",
-						disableFocusListener:false,
-					}
+		<!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+		<script src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="include/rs-plugin/js/addons/revolution.addon.slicey.min.js"></script>
+	
+		<script src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+		<script src="include/rs-plugin/js/extensions/revolution.extension.carousel.min.js"></script>
+		<script src="include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+		<script src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+		<script src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+		<script src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+		<script src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+		<script src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+		<script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+	
+		<!-- ADD-ONS JS FILES -->
+	
+		<script>
+			var tpj=jQuery;
+			var revapi31;
+			var $ = jQuery.noConflict();
+	
+			tpj(document).ready(function() {
+				if(tpj("#rev_slider_31_1").revolution == undefined){
+					revslider_showDoubleJqueryError("#rev_slider_31_1");
+				}else{
+					revapi31 = tpj("#rev_slider_31_1").show().revolution({
+						sliderType:"standard",
+						jsFileLocation:"include/rs-plugin/js/",
+						sliderLayout:"fullscreen",
+						dottedOverlay:"none",
+						delay:5500,
+						navigation: {
+							keyboardNavigation:"off",
+							keyboard_direction: "horizontal",
+							mouseScrollNavigation:"off",
+							 mouseScrollReverse:"default",
+							onHoverStop:"off",
+							arrows: {
+								style:"uranus",
+								enable:true,
+								hide_onmobile:true,
+								hide_onleave:false,
+								tmp:'',
+								left: {
+									h_align:"left",
+									v_align:"center",
+									h_offset:20,
+									v_offset:0
+								},
+								right: {
+									h_align:"right",
+									v_align:"center",
+									h_offset:20,
+									v_offset:0
+								}
+							}
+							,
+							bullets: {
+								enable:true,
+								hide_onmobile:false,
+								style:"hermes",
+								hide_onleave:false,
+								direction:"horizontal",
+								h_align:"center",
+								v_align:"bottom",
+								h_offset:0,
+								v_offset:20,
+								space:5,
+								tmp:''
+							}
+						},
+						responsiveLevels:[1240,1024,778,480],
+						visibilityLevels:[1240,1024,778,480],
+						gridwidth:[1240,1024,778,480],
+						gridheight:[868,768,960,720],
+						lazyType:"none",
+						shadow:0,
+						spinner:"off",
+						stopLoop:"off",
+						stopAfterLoops:-1,
+						stopAtSlide:-1,
+						shuffle:"off",
+						autoHeight:"off",
+						fullScreenAutoWidth:"off",
+						fullScreenAlignForce:"off",
+						fullScreenOffsetContainer: "",
+						fullScreenOffset: "0px",
+						hideThumbsOnMobile:"off",
+						hideSliderAtLimit:0,
+						hideCaptionAtLimit:0,
+						hideAllCaptionAtLilmit:0,
+						debugMode:false,
+						fallbacks: {
+							simplifyAll:"off",
+							nextSlideOnWindowFocus:"off",
+							disableFocusListener:false,
+						}
+					});
+				}
+	
+				if(revapi31) revapi31.revSliderSlicey();
+	
+				revapi31.on("revolution.slide.onloaded",function (e) {
+					setTimeout( function(){ SEMICOLON.slider.sliderDimensions(); }, 200 );
 				});
-			}
-		}); /*ready*/
-	</script>
+	
+				revapi31.on("revolution.slide.onchange",function (e,data) {
+					SEMICOLON.slider.revolutionSliderMenu();
+				});
+			});	/*ready*/
+		</script>
 
 </body>
 
